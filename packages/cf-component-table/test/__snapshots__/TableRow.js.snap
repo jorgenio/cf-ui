@@ -2,7 +2,7 @@
 
 exports[`should render 1`] = `
 <tr
-  className="cf-table__row cf-table__row--default"
+  className="cf-1dqe1yv"
 >
   TableRow
 </tr>
@@ -10,15 +10,7 @@ exports[`should render 1`] = `
 
 exports[`should render extra class name 1`] = `
 <tr
-  className="cf-table__row cf-table__row--default extra"
->
-  TableRow
-</tr>
-`;
-
-exports[`should render with accent 1`] = `
-<tr
-  className="cf-table__row cf-table__row--default cf-table__row--accent-orange"
+  className="extra"
 >
   TableRow
 </tr>
@@ -26,7 +18,7 @@ exports[`should render with accent 1`] = `
 
 exports[`should render with type 1`] = `
 <tr
-  className="cf-table__row cf-table__row--error"
+  className="cf-74alag"
 >
   TableRow
 </tr>

@@ -2,7 +2,7 @@
 
 exports[`should render 1`] = `
 <tbody
-  className="cf-table__body"
+  className="cf-tf7x23"
 >
   TableBody
 </tbody>
@@ -10,7 +10,7 @@ exports[`should render 1`] = `
 
 exports[`should render extra class names 1`] = `
 <tbody
-  className="cf-table__body extra"
+  className="extra"
 >
   TableBody
 </tbody>

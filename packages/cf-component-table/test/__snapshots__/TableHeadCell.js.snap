@@ -2,7 +2,7 @@
 
 exports[`should render 1`] = `
 <th
-  className="cf-table__cell cf-table__cell--head"
+  className="cf-1h5acsr"
 >
   TableHeadCell
 </th>
@@ -10,7 +10,7 @@ exports[`should render 1`] = `
 
 exports[`should render extra class name 1`] = `
 <th
-  className="cf-table__cell cf-table__cell--head extra"
+  className="extra"
 >
   TableHeadCell
 </th>

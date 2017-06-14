@@ -2,7 +2,7 @@
 
 exports[`should render 1`] = `
 <tfoot
-  className="cf-table__foot"
+  className="cf-y18mng"
 >
   TableFoot
 </tfoot>
@@ -10,7 +10,7 @@ exports[`should render 1`] = `
 
 exports[`should render extra class name 1`] = `
 <tfoot
-  className="cf-table__foot extra"
+  className="extra"
 >
   TableFoot
 </tfoot>

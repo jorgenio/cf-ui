@@ -4,6 +4,13 @@ const colorOffsetLight = 0.15;
 const colorOffsetDark = 0.07;
 
 export default {
+  breakpoints: {
+    mobile: '@media (min-width: 13.6em)',
+    mobileWide: '@media (min-width: 30.4em)',
+    tablet: '@media (min-width: 47.2em)',
+    desktop: '@media (min-width: 64em)',
+    desktopLarge: '@media (min-width: 97.6em)'
+  },
   gradient: {
     primary: 'linear-gradient(left, #76C4E2, #85CBA8)',
     two: 'linear-gradient(left, #8176B5, #85CBA8)',

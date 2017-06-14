@@ -12,6 +12,7 @@ import unit from 'fela-plugin-unit';
 import lvha from 'fela-plugin-lvha';
 import validator from 'fela-plugin-validator';
 import embedded from 'fela-plugin-embedded';
+import namedMediaQuery from 'fela-plugin-named-media-query';
 import beautifier from 'fela-beautifier';
 import monolithic from 'fela-monolithic';
 import { Provider } from 'react-fela';
@@ -25,7 +26,20 @@ const defaultOpts = {
 
 export const createRenderer = opts => {
   const usedOpts = Object.assign({}, defaultOpts, opts);
-  const plugins = [prefixer(), fallbackValue(), unit(), lvha(), embedded()];
+  const plugins = [
+    prefixer(),
+    fallbackValue(),
+    unit(),
+    lvha(),
+    embedded(),
+    namedMediaQuery({
+      mobile: variables.breakpoints.mobile,
+      mobileWide: variables.breakpoints.mobileWide,
+      tablet: variables.breakpoints.tablet,
+      desktop: variables.breakpoints.desktop,
+      desktopLarge: variables.breakpoints.desktopLarge
+    })
+  ];
   const enhancers = [];
 
   if (usedOpts.dev === true) {

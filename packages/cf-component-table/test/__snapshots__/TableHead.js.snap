@@ -2,7 +2,7 @@
 
 exports[`should render 1`] = `
 <thead
-  className="cf-table__head"
+  className="cf-1gxgayq"
 >
   TableHead
 </thead>
@@ -10,7 +10,7 @@ exports[`should render 1`] = `
 
 exports[`should render extra class name 1`] = `
 <thead
-  className="cf-table__head extra"
+  className="extra"
 >
   TableHead
 </thead>

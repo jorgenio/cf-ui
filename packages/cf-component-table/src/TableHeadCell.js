@@ -1,19 +1,34 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
+import { filterStyle } from 'cf-style-container';
 
 class TableHeadCell extends React.Component {
   render() {
-    const { className, ...props } = this.props;
-
-    let _className = 'cf-table__cell cf-table__cell--head';
-
-    if (className && className.trim()) {
-      _className += ' ' + className.trim();
-    }
+    const {
+      className,
+      styles,
+      children,
+      // Start ignoring, because Fela...
+      condensed,
+      striped,
+      bordered,
+      hover,
+      bare,
+      rowType,
+      theadIndex,
+      tbodyIndex,
+      tfootIndex,
+      rowIndex,
+      cellIndex,
+      // Stop ignoring...
+      ...props
+    } = this.props;
 
     return (
-      <th className={_className} {...props}>
+      <th
+        className={className || (styles && styles.tableHeadCell)}
+        {...filterStyle(props)}
+      >
         {this.props.children}
       </th>
     );
@@ -22,11 +37,8 @@ class TableHeadCell extends React.Component {
 
 TableHeadCell.propTypes = {
   className: PropTypes.string,
+  styles: PropTypes.object,
   children: PropTypes.node
-};
-
-TableHeadCell.defaultProps = {
-  className: ''
 };
 
 export default TableHeadCell;

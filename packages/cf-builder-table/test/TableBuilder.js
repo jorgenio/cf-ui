@@ -15,6 +15,7 @@ import {
   TableRow,
   TableCell
 } from '../../cf-component-table/src/index';
+import felaTestContext from '../../../felaTestContext';
 
 let store;
 
@@ -30,7 +31,9 @@ beforeEach(() => {
 test('should render a table', () => {
   const component = renderer.create(
     <Provider store={store}>
-      <TableBuilder tableName="test-table" rows={[]} columns={[]} />
+      {felaTestContext(
+        <TableBuilder tableName="test-table" rows={[]} columns={[]} />
+      )}
     </Provider>
   );
 
@@ -40,27 +43,29 @@ test('should render a table', () => {
 test('should render the dataset in columns', () => {
   const component = renderer.create(
     <Provider store={store}>
-      <TableBuilder
-        tableName="test-table"
-        rows={[
-          { id: '1', cells: { name: 'Foo', value: 'foo' } },
-          { id: '2', cells: { name: 'Bar', value: 'bar' } }
-        ]}
-        columns={[
-          {
-            label: 'Name',
-            cell: cells => {
-              return <TableCell key="name">{cells.name}</TableCell>;
+      {felaTestContext(
+        <TableBuilder
+          tableName="test-table"
+          rows={[
+            { id: '1', cells: { name: 'Foo', value: 'foo' } },
+            { id: '2', cells: { name: 'Bar', value: 'bar' } }
+          ]}
+          columns={[
+            {
+              label: 'Name',
+              cell: cells => {
+                return <TableCell key="name">{cells.name}</TableCell>;
+              }
+            },
+            {
+              label: 'Value',
+              cell: cells => {
+                return <TableCell key="value">{cells.value}</TableCell>;
+              }
             }
-          },
-          {
-            label: 'Value',
-            cell: cells => {
-              return <TableCell key="value">{cells.value}</TableCell>;
-            }
-          }
-        ]}
-      />
+          ]}
+        />
+      )}
     </Provider>
   );
   expect(component.toJSON()).toMatchSnapshot();
@@ -69,15 +74,17 @@ test('should render the dataset in columns', () => {
 test('should support table props', () => {
   const component = renderer.create(
     <Provider store={store}>
-      <TableBuilder
-        tableName="test-table"
-        rows={[]}
-        columns={[]}
-        striped
-        hover
-        bordered
-        condensed
-      />
+      {felaTestContext(
+        <TableBuilder
+          tableName="test-table"
+          rows={[]}
+          columns={[]}
+          striped
+          hover
+          bordered
+          condensed
+        />
+      )}
     </Provider>
   );
   expect(component.toJSON()).toMatchSnapshot();
@@ -86,30 +93,33 @@ test('should support table props', () => {
 test('should support row type/accent', () => {
   const component = renderer.create(
     <Provider store={store}>
-      <TableBuilder
-        tableName="test-table"
-        rows={[
-          { id: '1', type: 'success', cells: {} },
-          { id: '2', accent: 'red', cells: {} }
-        ]}
-        columns={[]}
-      />
+      {felaTestContext(
+        <TableBuilder
+          tableName="test-table"
+          rows={[
+            { id: '1', type: 'success', cells: {} },
+            { id: '2', accent: 'red', cells: {} }
+          ]}
+          columns={[]}
+        />
+      )}
     </Provider>
   );
   expect(component.toJSON()).toMatchSnapshot();
 });
 
 test('should support flashes', () => {
-  const wrapper = mount(
+  const component = renderer.create(
     <Provider store={store}>
-      <TableBuilder
-        tableName="test-table"
-        rows={[{ id: '1', cells: {} }, { id: '2', cells: {} }]}
-        columns={[]}
-      />
+      {felaTestContext(
+        <TableBuilder
+          tableName="test-table"
+          rows={[{ id: '1', cells: {} }, { id: '2', cells: {} }]}
+          columns={[]}
+        />
+      )}
     </Provider>
   );
   store.dispatch(tableActions.flashRow('test-table', '1', 'success'));
-  const row = wrapper.find('tbody').find('tr').at(0);
-  expect(row.prop('className')).toBe('cf-table__row cf-table__row--success');
+  expect(component.toJSON()).toMatchSnapshot();
 });

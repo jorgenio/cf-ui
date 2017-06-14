@@ -2,7 +2,7 @@
 
 exports[`should render 1`] = `
 <td
-  className="cf-table__cell"
+  className="cf-xm5wql"
 >
   TableCell
 </td>
@@ -10,7 +10,7 @@ exports[`should render 1`] = `
 
 exports[`should render extra class name 1`] = `
 <td
-  className="cf-table__cell extra"
+  className="extra"
 >
   TableCell
 </td>
@@ -18,7 +18,7 @@ exports[`should render extra class name 1`] = `
 
 exports[`should render with align 1`] = `
 <td
-  className="cf-table__cell cf-table__cell--align-center"
+  className="cf-1dzevu8"
 >
   TableCell
 </td>

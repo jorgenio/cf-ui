@@ -2,70 +2,70 @@
 
 exports[`should render a table 1`] = `
 <table
-  className="cf-table cf-table--bordered"
+  className="cf-16x3gyk"
 >
   <thead
-    className="cf-table__head"
+    className="cf-1gxgayq"
   >
     <tr
-      className="cf-table__row cf-table__row--default"
+      className="cf-1p0v7iz"
     />
   </thead>
   <tbody
-    className="cf-table__body"
+    className="cf-tf7x23"
   />
 </table>
 `;
 
 exports[`should render the dataset in columns 1`] = `
 <table
-  className="cf-table cf-table--bordered"
+  className="cf-16x3gyk"
 >
   <thead
-    className="cf-table__head"
+    className="cf-1gxgayq"
   >
     <tr
-      className="cf-table__row cf-table__row--default"
+      className="cf-1p0v7iz"
     >
       <th
-        className="cf-table__cell cf-table__cell--head"
+        className="cf-1avjog3"
       >
         Name
       </th>
       <th
-        className="cf-table__cell cf-table__cell--head"
+        className="cf-1lg90rw"
       >
         Value
       </th>
     </tr>
   </thead>
   <tbody
-    className="cf-table__body"
+    className="cf-tf7x23"
   >
     <tr
-      className="cf-table__row cf-table__row--default"
+      className="cf-1p0v7iz"
     >
       <td
-        className="cf-table__cell"
+        className="cf-19t8cnp"
       >
         Foo
       </td>
       <td
-        className="cf-table__cell"
+        className="cf-prxjqy"
       >
         foo
       </td>
     </tr>
     <tr
-      className="cf-table__row cf-table__row--default"
+      className="cf-1dqe1yv"
     >
       <td
-        className="cf-table__cell"
+        className="cf-19t8cnp"
       >
         Bar
       </td>
       <td
-        className="cf-table__cell"
+        className="cf-prxjqy"
       >
         bar
       </td>
@@ -74,25 +74,49 @@ exports[`should render the dataset in columns 1`] = `
 </table>
 `;
 
-exports[`should support row type/accent 1`] = `
+exports[`should support flashes 1`] = `
 <table
-  className="cf-table cf-table--bordered"
+  className="cf-16x3gyk"
 >
   <thead
-    className="cf-table__head"
+    className="cf-1gxgayq"
   >
     <tr
-      className="cf-table__row cf-table__row--default"
+      className="cf-1p0v7iz"
     />
   </thead>
   <tbody
-    className="cf-table__body"
+    className="cf-tf7x23"
   >
     <tr
-      className="cf-table__row cf-table__row--success"
+      className="cf-1xobv77"
     />
     <tr
-      className="cf-table__row cf-table__row--default cf-table__row--accent-red"
+      className="cf-1dqe1yv"
+    />
+  </tbody>
+</table>
+`;
+
+exports[`should support row type/accent 1`] = `
+<table
+  className="cf-16x3gyk"
+>
+  <thead
+    className="cf-1gxgayq"
+  >
+    <tr
+      className="cf-1p0v7iz"
+    />
+  </thead>
+  <tbody
+    className="cf-tf7x23"
+  >
+    <tr
+      className="cf-1xobv77"
+    />
+    <tr
+      className="cf-1dqe1yv"
     />
   </tbody>
 </table>
@@ -100,17 +124,17 @@ exports[`should support row type/accent 1`] = `
 
 exports[`should support table props 1`] = `
 <table
-  className="cf-table cf-table--striped cf-table--hover cf-table--bordered cf-table--condensed"
+  className="cf-96xfvr"
 >
   <thead
-    className="cf-table__head"
+    className="cf-1gxgayq"
   >
     <tr
-      className="cf-table__row cf-table__row--default"
+      className="cf-1p0v7iz"
     />
   </thead>
   <tbody
-    className="cf-table__body"
+    className="cf-tf7x23"
   />
 </table>
 `;

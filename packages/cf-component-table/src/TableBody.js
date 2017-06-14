@@ -1,16 +1,42 @@
 import React from 'react';
-
 import PropTypes from 'prop-types';
+import { filterStyle, mapChildren } from 'cf-style-container';
 
 class TableBody extends React.Component {
   render() {
-    let className = 'cf-table__body';
-    if (this.props.className.trim())
-      className += ' ' + this.props.className.trim();
+    const {
+      className,
+      styles,
+      striped,
+      hover,
+      bordered,
+      condensed,
+      bare,
+      tbodyIndex,
+      children,
+      ...props
+    } = this.props;
 
     return (
-      <tbody className={className}>
-        {this.props.children}
+      <tbody
+        className={className || (styles && styles.tableBody)}
+        {...filterStyle(props)}
+      >
+        {mapChildren(children, (child, index, children) => {
+          const isLast = index === children.length - 1;
+          if (React.isValidElement(child)) {
+            return React.cloneElement(child, {
+              condensed,
+              striped,
+              bordered,
+              hover,
+              bare,
+              tbodyIndex,
+              rowIndex: isLast ? -index : index
+            });
+          }
+          return child;
+        })}
       </tbody>
     );
   }
@@ -18,11 +44,8 @@ class TableBody extends React.Component {
 
 TableBody.propTypes = {
   className: PropTypes.string,
+  styles: PropTypes.object,
   children: PropTypes.node
-};
-
-TableBody.defaultProps = {
-  className: ''
 };
 
 export default TableBody;
